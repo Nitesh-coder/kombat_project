@@ -1,38 +1,26 @@
+import { useEffect, useState } from "react"
 import { Card } from "./components/Card"
 import Navbar from "./pages/Navbar"
 
-const data = [
-  {
-    name: 'XAUUSD',
-    invest: 50000
-  },
-  {
-    name: "WEB3",
-    invest: 23000
-  },
-  {
-    name: 'REACT',
-    invest: 40000
-  },
-  {
-    name: 'DREAMS',
-    invest: 12000
-  },
-  {
-    name: 'DREAMS',
-    invest: 12000
-  },
-  {
-    name: 'DREAMS',
-    invest: 12000
-  },
-  {
-    name: 'DREAMS',
-    invest: 12000
-  },
-]
+
 
 function App() {
+
+  const [data, setData] = useState([])
+
+  useEffect(()=>{
+    const fetchData = async()=>{
+      try {
+        const response = await fetch("https://kombat-backend.vercel.app/api")
+        const result = await response.json()
+        console.log(result);
+        setData(result)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData()
+  },[])
   
   return (
     <>
