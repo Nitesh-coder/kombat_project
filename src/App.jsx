@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Card } from "./components/Card"
 import Navbar from "./pages/Navbar"
+import axios from "axios"
 
 
 
@@ -11,10 +12,10 @@ function App() {
   useEffect(()=>{
     const fetchData = async()=>{
       try {
-        const response = await fetch("https://kombat-backend.vercel.app/api")
-        const result = await response.json()
-        console.log(result);
-        setData(result)
+        const response = await axios.get("https://kombat-backend.vercel.app/api")
+        
+        console.log(response.data);
+        setData(response.data)
       } catch (error) {
         console.log(error);
       }
