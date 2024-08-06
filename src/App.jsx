@@ -11,8 +11,8 @@ const data = [
     invest: 23000
   },
   {
-    name: 'DREAMS',
-    invest: 12000
+    name: 'REACT',
+    invest: 40000
   },
   {
     name: 'DREAMS',
