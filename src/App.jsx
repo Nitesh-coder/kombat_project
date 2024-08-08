@@ -13,8 +13,6 @@ function App() {
     const fetchData = async()=>{
       try {
         const response = await axios.get("https://kombat-backend.vercel.app/api")
-        
-        console.log(response.data);
         setData(response.data)
       } catch (error) {
         console.log(error);
@@ -28,7 +26,7 @@ function App() {
     <Navbar />
     <div className=" flex items-center justify-center">
       <div className=" grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-5">
-        {data.map(item=>(<div> <Card name={item.name} invest={item.invest} /> </div>))}
+        {data.map(item=>(<div> <Card name={item.name} invest={item.invest} id={item._id} /> </div>))}
       </div>  
       </div>  
     </>

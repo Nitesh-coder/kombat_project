@@ -3,7 +3,7 @@ import bg from '../assets/bg.jpg'
 import goldImg from '../assets/gold.jpeg'
 import { PopUp } from './PopUp'
 
-export const Card = ({name, invest}) => {
+export const Card = ({name, invest, id}) => {
   const [inputBox, setInputBox] = useState(false)
   function ClickMe(){
     setInputBox(!inputBox)
@@ -17,9 +17,8 @@ export const Card = ({name, invest}) => {
         <img src={goldImg} alt="goldImg" className=' w-32 h-30' />
         <h2 className=' font-bold text-md'>{name}</h2>
         <h3>{invest}S</h3>
-
         <div onClick={handleChildDiv} className=' absolute'>
-          {inputBox && <PopUp />}
+          {inputBox && <PopUp id={id} />}
         </div>
     </div>
   )
