@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import bg from '../assets/bg.jpg'
 import goldImg from '../assets/gold.jpeg'
 import { PopUp } from './PopUp'
+import click from '../assets/click.wav'
 
 export const Card = ({name, invest, id}) => {
   const [inputBox, setInputBox] = useState(false)
   function ClickMe(){
+    new Audio(click).play()
     setInputBox(!inputBox)
   }
   function handleChildDiv(e){
