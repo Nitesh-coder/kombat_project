@@ -13,9 +13,14 @@ export const PopUp = ({id}) => {
         })
     }
   return (
-    <div className='flex items-center justify-center flex-col'>
-        <input value={inputValue} onChange={handleChange} className=' h-10 w-24 outline-none text-center shadow-lg' type="text" />
-        <button onClick={handleClick} className=' h-7 w-16 bg-orange-600'>DONE</button>
+    <div className='flex fixed h-screen w-screen items-center justify-center flex-col z-50'>
+        <div className=' h-full w-full bg-gray-800 absolute opacity-50'></div>
+        <div className=' shadow-2xl h-28 w-36 bg-red-500 flex flex-col items-center justify-center relative opacity-100'>
+            
+            <div className=' absolute top-0 right-0'>X</div>
+            <input value={inputValue} onChange={handleChange} className=' h-10 w-24 outline-none text-center shadow-lg' type="text" />
+            <button onClick={handleClick} className=' h-7 w-16 bg-orange-600'>DONE</button>
+        </div>
     </div>
   )
 }
