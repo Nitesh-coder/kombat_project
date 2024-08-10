@@ -1,11 +1,11 @@
 import axios from 'axios'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { IoIosClose } from "react-icons/io";
 import { LevelContext } from '../context/levelContext';
 
 export const PopUp = ({id}) => {
     const [inputValue, setInputValue] = useState('')
-    const [inputBox, setInputBox] = useContext(LevelContext)
+    const {inputBox, setInputBox} = useContext(LevelContext)
     function handleChange(e){
         setInputValue(e.target.value)
     }
@@ -15,10 +15,12 @@ export const PopUp = ({id}) => {
             id: id
         })
         setInputBox(!inputBox)
+        
     }
     function handleCloseBtn(){
         setInputBox(!inputBox)
     }
+
   return (
     <div className='flex fixed h-screen w-screen items-center justify-center flex-col z-50'>
         <div className=' h-full w-full bg-slate-500 absolute opacity-10'></div>

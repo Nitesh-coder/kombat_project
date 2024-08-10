@@ -6,7 +6,8 @@ import click from '../assets/click.wav'
 import { LevelContext } from '../context/levelContext'
 
 export const Card = ({name, invest, id}) => {
-  const [inputBox, setInputBox] = useContext(LevelContext)
+
+  const {inputBox, setInputBox} = useContext(LevelContext)
   function ClickMe(){
     new Audio(click).play()
     setInputBox(!inputBox)
