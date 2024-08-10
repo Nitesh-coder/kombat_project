@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import bg from '../assets/bg.jpg'
 import goldImg from '../assets/gold.jpeg'
 import { PopUp } from './PopUp'
 import click from '../assets/click.wav'
+import { LevelContext } from '../context/levelContext'
 
 export const Card = ({name, invest, id}) => {
-  const [inputBox, setInputBox] = useState(false)
+  const [inputBox, setInputBox] = useContext(LevelContext)
   function ClickMe(){
     new Audio(click).play()
     setInputBox(!inputBox)
