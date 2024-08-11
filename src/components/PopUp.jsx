@@ -5,6 +5,7 @@ import { LevelContext } from '../context/levelContext';
 
 export const PopUp = ({id}) => {
     const [inputValue, setInputValue] = useState('')
+    const [val, setVal] = useState('')
 
     const {inputBox, setInputBox} = useContext(LevelContext)
     function handleChange(e){
@@ -17,6 +18,8 @@ export const PopUp = ({id}) => {
         })
     }
     function handleClick(){
+        setVal(inputValue)
+        console.log(val);
         setInputBox(!inputBox)
     }
     function handleCloseBtn(){
@@ -31,7 +34,7 @@ export const PopUp = ({id}) => {
             <div onClick={handleCloseBtn} className=' absolute top-0 right-0'>
                 <IoIosClose size={30} color='white' />
             </div>
-            <input value={inputValue} onChange={handleChange} className=' h-8 w-36 rounded-lg outline-none text-center shadow-lg' type="text" />
+            <input onChange={handleChange} className=' h-8 w-36 rounded-lg outline-none text-center shadow-lg' type="text" />
             <button onClick={()=>{postToAPI(); handleClick(); }} className=' h-7 w-24 rounded-md bg-lime-400 mt-1'>DONE</button>
         </div>
     </div>
