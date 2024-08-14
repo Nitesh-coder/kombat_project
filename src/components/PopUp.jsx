@@ -5,9 +5,8 @@ import { LevelContext } from '../context/levelContext';
 
 export const PopUp = ({id}) => {
     const [inputValue, setInputValue] = useState('')
-    const [val, setVal] = useState('')
-
     const {inputBox, setInputBox} = useContext(LevelContext)
+
     function handleChange(e){
         setInputValue(e.target.value)
     }
@@ -18,9 +17,9 @@ export const PopUp = ({id}) => {
         })
     }
     function handleClick(){
-        setVal(inputValue)
-        console.log(val);
+        
         setInputBox(!inputBox)
+        alert(`Success fully added ${inputValue}`)
     }
     function handleCloseBtn(){
         setInputBox(!inputBox)
