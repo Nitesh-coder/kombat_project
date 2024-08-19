@@ -1,29 +1,26 @@
 
 import Navbar from "./pages/Navbar"
-
-import MenuBar from "./components/MenuBar"
-import HomeCard from "./pages/HomeCard"
-import { useContext, useState } from "react"
-import Skins from "./pages/Skins"
-import { MenuProvider } from "./context/menuContext"
-
+import Home from "./pages/Home"
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
+import Stats from "./pages/Stats"
 
 
 function App() {
 
-  const {showCard} = useContext(MenuProvider)
-  const {showSkin} = useContext(MenuProvider)
+
   
   return (
-    <>
+    <Router>
 
       <Navbar />
-      <MenuBar />
-      {showCard && <HomeCard />}
-      {showSkin && <Skins />}
+      <Routes>
+        <Route path="/">
+        <Route index element={<Home />} />
+        <Route path="/stats" element={<Stats />} />
+        </Route>
+      </Routes>
 
-
-    </>
+    </Router>
   )
 }
 
