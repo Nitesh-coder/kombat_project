@@ -51,7 +51,7 @@ const Stats = () => {
     }, [name]);
 
   return (
-    <div className=' flex justify-center w-1/2'>
+    <div className=' flex justify-center'>
         <Pie data={chartData} />
     </div>
   )
