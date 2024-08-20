@@ -4,6 +4,7 @@ import { IoIosClose } from "react-icons/io";
 import { LevelContext } from '../context/levelContext';
 
 export const PopUp = ({id}) => {
+    const [changedVal, setChangedVal] = useState('')
     const [inputValue, setInputValue] = useState('')
     const {inputBox, setInputBox} = useContext(LevelContext)
 
