@@ -1,8 +1,11 @@
 import React from 'react'
+import Avatar from '../components/Avatar'
 
 const Skins = () => {
   return (
-    <div>Coming soon...</div>
+    <div>
+      <Avatar />
+    </div>
   )
 }
 
