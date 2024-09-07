@@ -7,7 +7,7 @@ const Mission = () => {
   return (
     <div >
       <Task taskTitle={"Ask This Question For 100 people you met."} />
-      <Task taskTitle={"Record yourself in video to explaining about some product,ideas and anything that is useful for 3mintues"} />
+      <Task taskTitle={"Record a 3-minute video explaining a product or idea"} />
     </div>
   )
 }
