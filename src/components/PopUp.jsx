@@ -10,17 +10,19 @@ export const PopUp = ({id}) => {
 
     function handleChange(e){
         setInputValue(e.target.value)
+
     }
-    async function postToAPI(){
+        async function postToAPI(){
         await axios.post('https://kombat-backend.vercel.app/api/update', {
             value: inputValue,
             id: id
         })
     }
+
     function handleClick(){
-        
+        setChangedVal(inputValue)
+        console.log(changedVal)
         setInputBox(!inputBox)
-        alert(`Success fully added ${inputValue}`)
     }
     function handleCloseBtn(){
         setInputBox(!inputBox)
